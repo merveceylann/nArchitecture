@@ -16,6 +16,8 @@ namespace Application.Features.Brands.Commands.CreateBrand
     {
         public string Name { get; set; }
 
+        //Bir requestimiz var bunu gerceklestirecek commandi veriyoruz --> CreateBrandCommand diye ve CreatedBrandDto bizim donus degerimizi veriyor (handlerda)
+        //mediaTR mediator paternini kullanarak bu commandi hangi handler tuketiyorsa onun handle metodunu calistirir.
         public class CreateBrandCommandHandler : IRequestHandler<CreateBrandCommand, CreatedBrandDto>
         {
             private readonly IBrandRepository _brandRepository;
